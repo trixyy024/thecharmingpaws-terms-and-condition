@@ -6,12 +6,20 @@
     font-family: Arial, sans-serif;
 }
 
+/* Ensure body takes full height and allows scrolling */
+html, body {
+    height: 100%;
+}
+
+/* Body Styling */
 body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Container Styling */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -28,6 +36,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1; /* Ensure header is above other content */
 }
 
 .logo {
@@ -46,6 +56,11 @@ nav a:hover {
 }
 
 /* Main Content Styling */
+main {
+    flex: 1;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
 h1 {
     color: #007bff;
     margin-bottom: 10px;
@@ -73,14 +88,6 @@ footer {
     padding: 10px 0;
     border-top: 1px solid #ddd;
     text-align: center;
-}
-
-footer nav a {
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
-}
-
-footer nav a:hover {
-    color: #007bff;
+    position: relative;
+    z-index: 1; /* Ensure footer is above other content */
 }
